@@ -7,7 +7,7 @@ if len(sys.argv) != 4:
     price2 = float(sys.argv[2])
     price3 = float(sys.argv[3])
 else:
-price1 = 10
+    price1 = 10
     price2 = 30
     price3 = 20.00
 
