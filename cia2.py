@@ -1,22 +1,16 @@
 import sys
 
-# Check if exactly 3 command-line arguments are given
-if len(sys.argv) == 4:
-    price1 = 10
-    price2 = 30
-    price3 = 20.00
+# If proper 3 parameters are NOT given → use default values
+if len(sys.argv) != 4:
+    print("No proper parameters given. Using default values...")
+    prices = [10.0, 20.0, 30.0]  # default values
 else:
-    print("No proper parameters given. Please enter values manually...")
-    price1 = float(input("Enter price1: "))
-    price2 = float(input("Enter price2: "))
-    price3 = float(input("Enter price3: "))
+    prices = [float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])]
 
-# Calculate minimum, maximum, and average
-minimum = min(price1, price2, price3)
-maximum = max(price1, price2, price3)
-average = (price1 + price2 + price3) / 3
+minimum = min(prices)
+maximum = max(prices)
+average = sum(prices) / len(prices)
 
-# Display results
-print("Minimum:", minimum)
-print("Maximum:", maximum)
-print("Average:", average)
+print("Minimum price:", minimum)
+print("Maximum price:", maximum)
+print("Average price:", average)
